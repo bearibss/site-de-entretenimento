@@ -1,13 +1,459 @@
+:root {
+  --coral: #e2705c;
+  --coral-escuro: #c4553f;
+  --dourado: #f2c96b;
+  --salvia: #a8d08a;
+  --tinta: #3d2b26;
+  --papel: rgba(255, 252, 246, 0.92);
+}
+
+html,
 body {
-    background-image: url("../src/pages/1.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  color: var(--tinta);
+}
+
+body {
+  background-image: url("../src/pages/1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.fundo {
+  min-height: 100vh;
+}
+
+/* ---------- Navbar ---------- */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 252, 246, 0.55);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(61, 43, 38, 0.12);
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.logo h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+}
+
+.navBotoes {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+.btnNav {
+  background: transparent;
+  border: none;
+  color: var(--tinta);
+  font-size: 1rem;
+  padding: 0.5rem 0.25rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.btnNav:hover {
+  border-bottom-color: var(--salvia);
+}
+
+.btnCadastrar {
+  background: var(--coral);
+  color: #fffdf8;
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(196, 85, 63, 0.3);
+}
+
+.btnCadastrar:hover {
+  background: var(--coral-escuro);
+}
+
+.btnFantasma {
+  background: transparent;
+  border: 1.5px solid var(--tinta);
+  border-radius: 999px;
+  padding: 0.55rem 1.3rem;
+  cursor: pointer;
+  color: var(--tinta);
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--salvia);
+  outline-offset: 2px;
+}
+
+/* ---------- Cadastrar álbum ---------- */
+.paginaAlbum {
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.cartaoAlbum {
+  width: min(760px, 100%);
+  background: var(--papel);
+  border-radius: 18px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 12px 40px rgba(61, 43, 38, 0.18);
+}
+
+.cartaoAlbum h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.avisoEdicao {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  background: rgba(168, 208, 138, 0.25);
+  border-left: 4px solid var(--salvia);
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.linhaAlbum {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.campoCapa {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.campoCapa input[type="file"] {
+  font-size: 0.85rem;
+  max-width: 200px;
+}
+
+.previaCapa {
+  width: 200px;
+  height: 200px;
+  border: 2px dashed rgba(61, 43, 38, 0.35);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: rgba(242, 201, 107, 0.15);
+  color: rgba(61, 43, 38, 0.6);
+}
+
+.previaCapa img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.camposTexto {
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rotulo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.cartaoAlbum input[type="text"],
+.cartaoAlbum input[type="number"],
+.cartaoAlbum textarea {
+  font: inherit;
+  font-weight: 400;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid rgba(61, 43, 38, 0.25);
+  border-radius: 10px;
+  background: #fffdf8;
+  width: 100%;
+}
+
+.cartaoAlbum textarea {
+  resize: vertical;
+  line-height: 1.55;
+}
+
+/* ---------- Estrelas ---------- */
+.estrelas {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.estrela {
+  background: none;
+  border: none;
+  padding: 0 0.1rem;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: rgba(61, 43, 38, 0.25);
+  transition: color 0.12s ease;
+}
+
+.estrela.cheia {
+  color: var(--dourado);
+  text-shadow: 0 1px 2px rgba(196, 85, 63, 0.35);
+}
+
+.estrelasLeitura .estrela {
+  font-size: 1.15rem;
+  cursor: default;
+}
+
+.estrelasTexto {
+  margin-left: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgba(61, 43, 38, 0.7);
+}
+
+.notaAtual {
+  font-weight: 400;
+  color: rgba(61, 43, 38, 0.7);
+}
+
+.erro {
+  margin: 0;
+  color: var(--coral-escuro);
+  font-weight: 600;
+}
+
+.acoesAlbum {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.btnPostar {
+  background: var(--coral);
+  color: #fffdf8;
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 2.4rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 3px 14px rgba(196, 85, 63, 0.35);
+}
+
+.btnPostar:hover {
+  background: var(--coral-escuro);
+}
+
+/* ---------- Perfil ---------- */
+.paginaPerfil {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.cabecalhoPerfil h1 {
+  margin: 0 0 0.25rem;
+}
+
+.cabecalhoPerfil p {
+  margin: 0 0 2rem;
+  color: rgba(61, 43, 38, 0.75);
+}
+
+.meusAlbuns {
+  background: var(--papel);
+  border-radius: 18px;
+  padding: 1.75rem;
+  box-shadow: 0 12px 40px rgba(61, 43, 38, 0.18);
+}
+
+.meusAlbuns h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.4rem;
+}
+
+.dicaEdicao {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  color: rgba(61, 43, 38, 0.7);
+}
+
+.vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.listaAlbuns {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.itemAlbum {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem;
+  border: 1px solid rgba(61, 43, 38, 0.12);
+  border-radius: 12px;
+  background: #fffdf8;
+}
+
+.capaItem {
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(242, 201, 107, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: rgba(61, 43, 38, 0.55);
+}
+
+.capaItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dadosItem {
+  flex: 1;
+  min-width: 0;
+}
+
+.nomeAlbum {
+  margin: 0;
+  font-size: 1.15rem;
+  cursor: pointer;
+  display: inline-block;
+  border-bottom: 2px dotted rgba(226, 112, 92, 0.6);
+  user-select: none;
+}
+
+.nomeAlbum:hover {
+  color: var(--coral-escuro);
+}
+
+.artistaAlbum {
+  margin: 0.15rem 0 0.4rem;
+  color: rgba(61, 43, 38, 0.75);
+  font-size: 0.95rem;
+}
+
+.resenhaAlbum {
+  margin: 0.5rem 0 0;
+  line-height: 1.55;
+  max-width: 62ch;
+  white-space: pre-wrap;
+}
+
+.btnRemover {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: rgba(61, 43, 38, 0.4);
+  cursor: pointer;
+}
+
+.btnRemover:hover {
+  color: var(--coral-escuro);
+}
+
+/* ---------- Formulários de conta ---------- */
+.inicio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.apresentacao {
+  max-width: 46ch;
+}
+
+.divInputs {
+  background: var(--papel);
+  border-radius: 18px;
+  padding: 1.75rem;
+  box-shadow: 0 12px 40px rgba(61, 43, 38, 0.18);
+  min-width: 280px;
+}
+
+.formInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.formInputs input {
+  font: inherit;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid rgba(61, 43, 38, 0.25);
+  border-radius: 10px;
+  background: #fffdf8;
+}
+
+@media (max-width: 640px) {
+  .nav {
+      padding: 0.85rem 1rem;
+      flex-wrap: wrap;
   }
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+  .previaCapa {
+      width: 100%;
+      max-width: 260px;
   }
-  
+  .acoesAlbum {
+      flex-direction: column-reverse;
+  }
+  .btnPostar,
+  .acoesAlbum .btnFantasma {
+      width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+      transition: none !important;
+  }
+}
