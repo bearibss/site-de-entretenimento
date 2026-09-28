@@ -5,7 +5,7 @@ import Login from "./pages/Login";
 import Feed from "./pages/Feed";
 import Inicio from "./pages/Inicio";
 import Perfil from "./pages/Perfil";
-import CadastrarAlbum from "./pages/CadastrarAlbum";
+import CadastrarAlbum from "./pages/CadastrarAlbuns";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {

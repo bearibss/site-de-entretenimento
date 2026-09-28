@@ -9,7 +9,7 @@ function Inicio() {
             <main className="inicio">
                 <section className="apresentacao">
                     <h1>Música é língua de gente</h1>
-
+                    {/* <img src=".\src\pages\5 (2).png" height={500} /> */}
                     <h2>
                         Ouça. Sinta. Diga o que pensa.
                     </h2>
