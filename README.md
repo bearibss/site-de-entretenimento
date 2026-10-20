@@ -6,16 +6,16 @@ O Resenhas de Álbuns é uma aplicação web desenvolvida para amantes da músic
 A plataforma permite explorar um catálogo de álbuns, consultar informações sobre artistas e lançamentos, publicar resenhas e avaliar obras musicais. A aplicação integra uma API externa para obter informações dos álbuns e utiliza um banco de dados para armazenar os usuários, as obras e as resenhas publicadas.
 
 ### Funcionalidades
-**- Catálogo de álbuns:** navegação por álbuns musicais disponíveis na plataforma.
-**- Busca de álbuns:** pesquisa de obras pelo título ou nome do artista.
-**- Detalhes dos álbuns:** visualização de informações como título, artista, capa e data de lançamento.
-**- Cadastro de usuários:** criação de contas para acessar as funcionalidades da plataforma.
-**- Publicação de resenhas:** criação de resenhas com título, texto e nota.
-**- Visualização de resenhas:** leitura das opiniões publicadas pelos usuários.
-**- Edição de resenhas:** atualização do conteúdo das próprias publicações.
-**- Exclusão de resenhas:** remoção das próprias publicações.
-**- Avaliação de álbuns:** atribuição de notas às obras musicais.
-**- Página inicial:** acesso às principais áreas da plataforma e às resenhas disponíveis.
+* **Catálogo de álbuns:** navegação por álbuns musicais disponíveis na plataforma.
+* **Busca de álbuns:** pesquisa de obras pelo título ou nome do artista.
+* **Detalhes dos álbuns:** visualização de informações como título, artista, capa e data de lançamento.
+* **Cadastro de usuários:** criação de contas para acessar as funcionalidades da plataforma.
+* **Publicação de resenhas:** criação de resenhas com título, texto e nota.
+* **Visualização de resenhas:** leitura das opiniões publicadas pelos usuários.
+* **Edição de resenhas:** atualização do conteúdo das próprias publicações.
+* **Exclusão de resenhas:** remoção das próprias publicações.
+* **Avaliação de álbuns:** atribuição de notas às obras musicais.
+* **Página inicial:** acesso às principais áreas da plataforma e às resenhas disponíveis.
 ### Tecnologias utilizadas
 **Frontend:** interface e interação com os usuários.
 **Backend:** processamento das requisições, validação dos dados e regras de negócio.
@@ -59,4 +59,8 @@ Objetivo do projeto
 
 O projeto tem como objetivo oferecer um espaço para a descoberta musical e o compartilhamento de opiniões sobre álbuns, além de aplicar conhecimentos de desenvolvimento web, integração com APIs, modelagem de bancos de dados relacionais e operações CRUD.
 
-Desenvolvido como uma aplicação web voltada à comunidade de ouvintes e apreciadores de música.
+## 🚀 Acesso ao projeto
+* Frontend: http://localhost:5173
+* Backend: http://localhost:3000
+
+*Desenvolvido como uma aplicação web voltada à comunidade de ouvintes e apreciadores de música.*
